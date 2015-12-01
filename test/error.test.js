@@ -80,7 +80,7 @@ describe('Handling Errors ', function() {
         new mapnik_backend('mapnik://./test/data/test.xml', function(err, source) {
             if (err) throw err;
             source._info.format = 'this is an invalid image format';
-            source.getTile(0,0,0, function(err, tile, headers) {
+            source.getTile(0, 0, 0, 0, function(err, tile, headers) {
                 assert.equal(err.message,'unknown file type: this is an invalid image format');
                 source.close(function(err) {
                     done();
@@ -93,7 +93,7 @@ describe('Handling Errors ', function() {
         new mapnik_backend('mapnik://./test/data/test.xml', function(err, source) {
             if (err) throw err;
             source._info.format = 'png8:z=20';
-            source.getTile(0,0,0, function(err, tile, headers) {
+            source.getTile(0, 0, 0, 0, function(err, tile, headers) {
                 assert(err.message.match(/invalid compression parameter: 20 \(only -1 through (9|10) are valid\)/), 'error message mismatch: ' + err.message);
                 source.close(function(err) {
                     done();

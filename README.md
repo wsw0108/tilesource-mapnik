@@ -1,34 +1,22 @@
-# tilelive-mapnik
+# tilesource-mapnik
 
-Renderer backend for [tilelive.js](http://github.com/mapbox/tilelive.js) that
+- A fork of [tilelive-mapnik](http://github.com/mapbox/tilelive-mapnik)
+
+Renderer backend for [tilesource.js](http://github.com/wsw0108/tilesource) that
 uses [node-mapnik](http://github.com/mapnik/node-mapnik) to render tiles and
-grids from a Mapnik XML file. `tilelive-mapnik` implements the
-[Tilesource API](https://github.com/mapbox/tilelive.js/blob/master/API.md).
-
-[![Build Status](https://secure.travis-ci.org/mapbox/tilelive-mapnik.png)](http://travis-ci.org/mapbox/tilelive-mapnik)
-[![Build status](https://ci.appveyor.com/api/projects/status/6am7la0hiaei8qop)](https://ci.appveyor.com/project/Mapbox/tilelive-mapnik)
-
-## Installation
-
-    npm install tilelive-mapnik
-
-Though `tilelive` is not a dependency of `tilelive-mapnik` you will want to
-install it to actually make use of `tilelive-mapnik` through a reasonable
-API.
-
+grids from a Mapnik XML file.
 
 ## Usage
 
 ```javascript
-var tilelive = require('tilelive');
-require('tilelive-mapnik').registerProtocols(tilelive);
+var tilesource = require('tilesource');
+require('tilesource-mapnik').registerProtocols(tilesource);
 
-tilelive.load('mapnik:///path/to/file.xml', function(err, source) {
+tilesource.load('mapnik:///path/to/file.xml', function(err, source) {
     if (err) throw err;
 
-    // Interface is in XYZ/Google coordinates.
-    // Use `y = (1 << z) - 1 - y` to flip TMS coordinates.
-    source.getTile(0, 0, 0, function(err, tile, headers) {
+    // Interface is (z, res, xmin, ymin).
+    source.getTile(z, res, xmin, ymin, function(err, tile, headers) {
         // `err` is an error object when generation failed, otherwise null.
         // `tile` contains the compressed image file as a Buffer
         // `headers` is a hash with HTTP headers for the image.
