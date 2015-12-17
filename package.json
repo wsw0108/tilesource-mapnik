@@ -1,6 +1,6 @@
 {
     "name"          : "tilesource-mapnik",
-    "version"       : "v1.1.0-maptalks1",
+    "version"       : "1.1.1-maptalks1",
     "main"          : "./lib/mapnik_backend.js",
     "description"   : "Mapnik backend for tilesource",
     "url"           : "https://github.com/wsw0108/tilesource-mapnik",
@@ -22,7 +22,7 @@
     "dependencies": {
         "step"        : "~0.0.5",
         "generic-pool": "~2.1.1",
-        "mapnik":       "https://github.com/wsw0108/node-mapnik/tarball/v3.4.11-maptalks1",
+        "mapnik":       "https://github.com/wsw0108/node-mapnik/tarball/3.4.11-maptalks1",
         "mime"        : "~1.2.11"
     },
     "devDependencies": {
