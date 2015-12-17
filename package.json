@@ -1,6 +1,6 @@
 {
     "name"          : "tilesource-mapnik",
-    "version"       : "1.0.0",
+    "version"       : "v1.1.0-maptalks1",
     "main"          : "./lib/mapnik_backend.js",
     "description"   : "Mapnik backend for tilesource",
     "url"           : "https://github.com/wsw0108/tilesource-mapnik",
