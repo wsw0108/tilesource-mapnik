@@ -22,7 +22,7 @@
     "dependencies": {
         "step"        : "~0.0.5",
         "generic-pool": "~2.1.1",
-        "mapnik":       ">=0.7.25 && <4.0.0",
+        "mapnik":       "https://github.com/wsw0108/node-mapnik/tarball/v3.4.11-maptalks1",
         "mime"        : "~1.2.11"
     },
     "devDependencies": {
